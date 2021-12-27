@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 
 import Card from './Card';
 import classes from './UserForm.module.css'
-function UserForm(){
+function UserForm(props){
 
     const [userName,setUserName]=useState('');
     const [age,setAge]=useState('');
@@ -17,7 +17,7 @@ function UserForm(){
         {
             return;
         }
-        console.log(userName,age);
+        props.onAddUser(userName,age);
         setUserName('');
         setAge('');
     }
