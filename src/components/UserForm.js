@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-
+import Wrapper from './Wrapper';
 import Card from './Card';
 import classes from './UserForm.module.css'
 import ErrorModal from './ErrorModal';
@@ -41,7 +41,8 @@ function UserForm(props){
         setError(null);
     }
         return(
-            <>
+            <Wrapper>
+            
             {error && <ErrorModal onConfirm={errorHandler} title={error.title} message={error.message}></ErrorModal>}
             
             <Card className={classes.input}>
@@ -53,7 +54,7 @@ function UserForm(props){
                 <button type='submit' >Add User</button>
             </form>
             </Card>
-            </>
+            </Wrapper>
         );
 }
 export default UserForm;
